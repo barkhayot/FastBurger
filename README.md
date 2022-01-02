@@ -32,4 +32,4 @@ After you migrate all migrations run server on your local machine :
 **Enjoy the application**
 
 ### Examples :
-<img src="https://github.com/barkhayot/FastBurger/blob/main/screencapture-localhost-8000-foods-2022-01-02-16_56_25.jpg" width="300" height="300" />
+<img src="https://github.com/barkhayot/FastBurger/blob/main/screencapture-localhost-8000-foods-2022-01-02-16_56_25.jpg" width="350" height="400" />
