@@ -1,0 +1,38 @@
+{% extends "base/base.html" %}
+{% block content %}
+
+    <div class="container" >
+        <h1 style="font-size: 48px; text-align: center;" >Stuff Board</h1>
+        <h3>Order Detail</h3>
+        <br>
+        <br>
+        <div class="row row-cols-1 row-cols-md-1 g-4">
+
+            
+    
+            <div class="col">
+                    <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+                        <div class="card-body" style="text-align: center;">
+                            <form action="" method="POST">
+                                {% csrf_token %}
+                                <h1>Order Numer {{order.id}}</h1>
+                            <hr>
+                            <h2>Order Meal : {{order.food.food_name}}</h2>
+                            <h4>Total Price : {{order.food.food_price}} </h4>
+                            <h4>Order Count : {{order.count}}</h4>
+                                <br>
+                                <br>
+                                {{form.status}}
+                                <br>
+                                <br>
+                                <button href="" class=" btn btn-danger btn-lg">OK</button>
+                            </form>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+        </div>
+    
+    </div>
+{% endblock %}

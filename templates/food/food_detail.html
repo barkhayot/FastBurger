@@ -1,0 +1,36 @@
+{% extends "base/base.html" %}
+{% block content %}
+
+
+<h2 style="text-align: center;">Your Order</h2>
+    <br>
+    <div class="row row-cols-1 row-cols-md-1 g-4">
+        <form action="" method="POST">
+            {% csrf_token %}
+
+            <div class="col">
+                    
+                    <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+                        <div class="card-body" style="text-align: center;">
+                            
+                            <img style="width: 300px; height: 300px;" src="{{food.img.url}}" alt=""> 
+                            <hr>
+                            <h2>{{food.food_name}}</h2>
+                            <h2>{{food.food_price}} KRW </h2>
+                                {{ form.count }}
+                                <br>
+                                <br>
+                                {{form.order_t}}
+                                <br>
+                                <br>
+                            <button class="btn btn-primary btn-lg">Add order</button>
+                        </div>
+                    </div>
+                
+            </div>
+        </form>
+    </div>
+
+
+
+{% endblock %}

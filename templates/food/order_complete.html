@@ -1,0 +1,32 @@
+
+{% extends "base/base.html" %}
+{% block content %}
+
+<div class="container" >
+    <h1 style="font-size: 48px; text-align: center;" >Thank You!</h1>
+    <br>
+    <br>
+
+    <div class="row row-cols-1 row-cols-md-1 g-4">
+
+        <div class="col">
+                    
+            <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+                <div class="card-body" style="text-align: center;">
+                    <img style="width: 100px; height: 100px;" src="{{order.food.img.url}}" alt=""> 
+                    <hr>
+                    <h2 style="text-align: left;">{{order.food}}</h2>
+                    <h2 style="text-align: left;">{{order.food.food_price}} x {{order.count}} = <span style="color: red;" >{{total_price}}</span> KRW</h2>
+                    <h1 style="text-align: left; color: red;">{{order.order_t}}</h1>
+                   
+                    <h2>Your Order Numer :</h2>
+                    <h1>{{order.id}}</h1>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock %}

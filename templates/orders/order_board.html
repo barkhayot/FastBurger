@@ -1,0 +1,63 @@
+{% extends "base/base.html" %}
+{% block content %}
+
+    <div class="container" >
+        <h1 style="font-size: 48px; text-align: center;" >Stuff Board</h1>
+        <br>
+        <br>
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+            <div class="col">
+                <div class="card shadow-lg p-2 mb-3 bg-white rounded">
+                    <div class="card-body" style="text-align: center;">
+                        <a href="{% url 'order_board' %}" class="btn" style="font-size: 20px;">Current</a>
+                    </div>
+                </div>   
+            </div>
+            <div class="col">
+                <div class="card shadow-lg p-2 mb-3 rounded" style="background-color:  #00cc44;">
+                    <div class="card-body" style="text-align: center;">
+                        <a href="{% url 'completed_order_view' %}" class="btn" style="font-size: 20px;">Completed</a>
+                    </div>
+                </div>   
+            </div>
+            <div class="col">
+                <div class="card shadow-lg p-2 mb-3 bg-primary rounded">
+                    <div class="card-body" style="text-align: center;">
+                        <a href="{% url 'order_list_view' %}" class="btn" style="font-size: 20px;">List</a>
+                    </div>
+                </div>   
+            </div>
+            <div class="col">
+                <div class="card shadow-lg p-2 mb-3 bg-danger rounded">
+                    <div class="card-body" style="text-align: center;">
+                        <a href="{% url 'order_board' %}" class="btn" style="font-size: 20px;">All Orders</a>
+                    </div>
+                </div>   
+            </div>
+
+        </div>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+
+            {% for order in orders %}
+    
+            <div class="col">
+                    <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+                        <div class="card-body" style="text-align: center;">
+
+                                <h1>Order Numer {{order.id}}</h1>
+                            <hr>
+                            <h2>{{order.food.food_name}}</h2>
+                            <h4>{{order.food.food_price}} </h4>
+                                <br>
+                                <br>
+                                <a href="{% url 'order_detail' order.id %}" class=" btn btn-danger btn-lg">Complete</a>
+                            </form>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    
+    </div>
+{% endblock %}

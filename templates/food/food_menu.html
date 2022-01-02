@@ -1,0 +1,78 @@
+{% extends "base/base.html" %}
+{% block content %}
+
+<div class="container">
+    <h2>Burgers</h2>
+    <br>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+
+        {% for food in foods %}
+
+        <div class="col">
+                <a href="{% url 'food_detail' food.id %}" style="text-decoration: none; color: black;">
+                <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+                    <div class="card-body" style="text-align: center;">
+                        
+                        <img style="width: 150px; height: 150px;" src="{{food.img.url}}" alt=""> 
+                        <hr>
+                        <h2>{{food.food_name}}</h2>
+                        <h4>{{food.food_price}} </h4>
+                        
+                    </div>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+
+    <h2>Drinks</h2>
+    <br>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+
+        {% for drink in drinks %}
+
+        <div class="col">
+                <a href="{% url 'food_detail' drink.id %}" style="text-decoration: none; color: black;">
+                <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+                    <div class="card-body" style="text-align: center;">
+                        
+                        <img style="width: 150px; height: 150px;" src="{{drink.img.url}}" alt=""> 
+                        <hr>
+                        <h2>{{drink.food_name}}</h2>
+                        <h4>{{drink.food_price}} </h4>
+                        
+                    </div>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+
+    <h2>Sides</h2>
+    <br>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+
+        {% for side in sides %}
+
+        <div class="col">
+                <a href="{% url 'food_detail' side.id %}" style="text-decoration: none; color: black;">
+                <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+                    <div class="card-body" style="text-align: center;">
+                        
+                        <img style="width: 180px; height: 180px;" src="{{side.img.url}}" alt=""> 
+                        <hr>
+                        <h2>{{side.food_name}}</h2>
+                        <h4>{{side.food_price}} </h4>
+                        
+                    </div>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+
+{% endblock %}
+
